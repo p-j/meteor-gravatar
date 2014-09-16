@@ -42,3 +42,8 @@ var url = Gravatar.imageUrl('email@example.com', {
 });
 // http://www.gravatar.com/avatar/5658ffccee7f0ebfda2b226238b1eb6e?size=34&default=mm
 ```
+
+Credits
+-------
+
+Based on [Tom Coleman's work](https://github.com/tmeasday/meteor-gravatar)
