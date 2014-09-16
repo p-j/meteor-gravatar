@@ -32,13 +32,13 @@ var url = Gravatar.imageUrl(email, options);
 // https://secure.gravatar.com/avatar/5658ffccee7f0ebfda2b226238b1eb6e
 ```
 
-`options` may contain key:value representation of parameters to be added to the URL. For a list of parameters available, see [Gravatar's documentation](http://en.gravatar.com/site/implement/images/)
+`options` may contain `key:value` representation of parameters to be added to the URL. For a list of parameters available, see [Gravatar's documentation](http://en.gravatar.com/site/implement/images/)
 
 ```javascript
-// Exemple:
+// Example:
 var url = Gravatar.imageUrl('email@example.com', {
-        size: 34,
-        default: 'mm'
-    });
+    size: 34,
+    default: 'mm'
+});
 // http://www.gravatar.com/avatar/5658ffccee7f0ebfda2b226238b1eb6e?size=34&default=mm
 ```
