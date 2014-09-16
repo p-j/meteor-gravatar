@@ -21,11 +21,24 @@ on **both the client and server**:
 ```javascript
 var email = 'email@example.com';
 var options = { 
-    secure: true // choose between `http://` and `https://` protocol
+    secure: true // choose between `http://www.gravatar.com` 
+                 // and `https://secure.gravatar.com`
+                 // default is `false`
 }; 
 
 var md5Hash = Gravatar.hash(email);
 // 5658ffccee7f0ebfda2b226238b1eb6e
 var url = Gravatar.imageUrl(email, options);
-// https://www.gravatar.com/avatar/5658ffccee7f0ebfda2b226238b1eb6e
+// https://secure.gravatar.com/avatar/5658ffccee7f0ebfda2b226238b1eb6e
+```
+
+`options` may contain key:value representation of parameters to be added to the URL. For a list of parameters available, see [Gravatar's documentation](http://en.gravatar.com/site/implement/images/)
+
+```javascript
+// Exemple:
+var url = Gravatar.imageUrl('email@example.com', {
+        size: 34,
+        default: 'mm'
+    });
+// http://www.gravatar.com/avatar/5658ffccee7f0ebfda2b226238b1eb6e?size=34&default=mm
 ```

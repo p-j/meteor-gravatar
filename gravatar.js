@@ -1,21 +1,31 @@
 // super, super simple
 Gravatar = {
-  hash: function(email) {
+  hash: function (email) {
     return CryptoJS.MD5(email.trim().toLowerCase());
   },
-  
-  imageUrl: function(email, options) {
-    var options = options || {};
-    
-    var protocol = options.secure ? 'https' : 'http';
+
+  imageUrl: function (email, options) {
+    options = options || {};
+
+    // Want HTTPS ?
+    var url = options.secure ?
+      'https://secure.gravatar.com/avatar/' :
+      'http://www.gravatar.com/avatar/';
+
+    // Gimme my avatar !
+    url +=  Gravatar.hash(email);
+
     delete options.secure;
-    var hash = Gravatar.hash(email);
-    var url = protocol + '://www.gravatar.com/avatar/' + hash;
-    
-    var params = _.map(options, function(val, key) { return key + "=" + encodeURIComponent(val)}).join('&');
-    if (params !== '')
+
+    // Have any options to pass ?
+    var params = _.map(options, function (val, key) {
+      return key + '=' + encodeURIComponent(val);
+    }).join('&');
+
+    if (params.length > 0) {
       url += '?' + params;
-    
+    }
+
     return url;
   }
-}
+};
