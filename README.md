@@ -43,7 +43,11 @@ var options = {
 
 var md5Hash = Gravatar.hash(email);
 // 5658ffccee7f0ebfda2b226238b1eb6e
+
 var url = Gravatar.imageUrl(email, options);
+// https://secure.gravatar.com/avatar/5658ffccee7f0ebfda2b226238b1eb6e
+
+var url2 = Gravatar.imageUrl(md5Hash, options);
 // https://secure.gravatar.com/avatar/5658ffccee7f0ebfda2b226238b1eb6e
 ```
 
