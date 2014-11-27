@@ -1,5 +1,7 @@
 Get Gravatar hashes / URLs for an email address
 
+[![Build Status](https://travis-ci.org/p-j/meteor-gravatar.svg)](https://travis-ci.org/p-j/meteor-gravatar)
+
 Dependency
 ----------
 - [`jparker:crypto-md5`](https://github.com/p-j/meteor-crypto-md5).
@@ -37,8 +39,8 @@ Example
 var email = 'email@example.com';
 var options = { 
     secure: true // choose between `http://www.gravatar.com` 
-                 // and `https://secure.gravatar.com`
-                 // default is `false`
+                 //            and `https://secure.gravatar.com`
+                 //            default is `false`
 }; 
 
 var md5Hash = Gravatar.hash(email);
