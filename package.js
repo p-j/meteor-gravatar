@@ -1,7 +1,7 @@
 /* jshint ignore:start */
 Package.describe({
 	summary: 'Simple package to use gravatar images',
-	version: '0.3.0',
+	version: '0.3.1',
 	git: 'https://github.com/p-j/meteor-gravatar.git'
 });
 
