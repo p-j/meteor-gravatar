@@ -19,7 +19,7 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
 	api.use([
 		'jparker:crypto-md5@0.1.1',
-		'jparker:gravatar',
+		'jparker:gravatar@0.3.0',
 		'tinytest'
 	], ['client', 'server']);
 
