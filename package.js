@@ -8,6 +8,8 @@ Package.describe({
 Package.onUse(function(api) {
 	api.versionsFrom('METEOR@0.9.1.1');
 
+	api.use('underscore@1.0.3');
+
 	api.use('jparker:crypto-md5@0.1.1', ['client', 'server']);
 
 	if (api.export) {
