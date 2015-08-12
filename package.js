@@ -1,5 +1,6 @@
 /* jshint ignore:start */
 Package.describe({
+	name: 'jparker:gravatar',
 	summary: 'Simple package to use gravatar images',
 	version: '0.3.1',
 	git: 'https://github.com/p-j/meteor-gravatar.git'
@@ -7,6 +8,8 @@ Package.describe({
 
 Package.onUse(function(api) {
 	api.versionsFrom('METEOR@0.9.1.1');
+
+	api.use('underscore@1.0.3');
 
 	api.use('jparker:crypto-md5@0.1.1', ['client', 'server']);
 
