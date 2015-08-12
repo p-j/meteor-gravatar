@@ -1,5 +1,6 @@
 /* jshint ignore:start */
 Package.describe({
+	name: 'jparker:gravatar',
 	summary: 'Simple package to use gravatar images',
 	version: '0.3.1',
 	git: 'https://github.com/p-j/meteor-gravatar.git'
