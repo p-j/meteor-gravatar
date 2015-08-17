@@ -64,6 +64,26 @@ var url = Gravatar.imageUrl('email@example.com', {
 // http://www.gravatar.com/avatar/5658ffccee7f0ebfda2b226238b1eb6e?size=34&default=mm
 ```
 
+This package also include [`idorecall:email-normalize`](https://github.com/iDoRecall/email-normalize) 
+This means that by default, if you provide a sub-address as a parameter and no default image in the options for `imageUrl`, it will return a url with an automatically filled `d` option that would be the gravatar with the standard address.
+
+In code :
+
+```javascript
+var originalEmail = 'test+test@gmail.com';
+var normalizedEmail = Email.normalize(originalEmail);
+// test@gmail.com
+
+Gravatar.hash(originalEmail);
+// d093205fcb0a6ff09ad450636db8f05e
+
+Gravatar.hash(normalizedEmail);
+// 1aedb8d9dc4751e229a335e371db8058
+
+var url = Gravatar.imageUrl(originalEmail);
+// http://www.gravatar.com/avatar/d093205fcb0a6ff09ad450636db8f05e?d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2F1aedb8d9dc4751e229a335e371db8058
+```
+
 Credits
 -------
 
