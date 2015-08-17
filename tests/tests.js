@@ -47,4 +47,16 @@ Tinytest.add('Gravatar - imageUrl', function(t) {
 		}),
 		'http://www.gravatar.com/avatar/77a6c4bd6a73a5780698778e7692461d?size=34&default=mm'
 	);
+
+	t.equal(
+		Gravatar.imageUrl('test+test@gmail.com', {
+			d: 'https://avatars1.githubusercontent.com/u/1537324?v=3&s=96'
+		}),
+		'http://www.gravatar.com/avatar/d093205fcb0a6ff09ad450636db8f05e?d=' + encodeURIComponent('https://avatars1.githubusercontent.com/u/1537324?v=3&s=96')
+	)
+
+	t.equal(
+		Gravatar.imageUrl('test+test@gmail.com'),
+		'http://www.gravatar.com/avatar/d093205fcb0a6ff09ad450636db8f05e?d=' + encodeURIComponent('http://www.gravatar.com/avatar/1aedb8d9dc4751e229a335e371db8058')
+	)
 });

@@ -3,7 +3,7 @@ Package.describe({
 	name: 'jparker:gravatar',
 	summary: 'Simple package to use gravatar images',
 	version: '0.4.0',
-	documentation: 'https://github.com/p-j/meteor-gravatar/blob/master/README.md',
+	documentation: 'README.md',
 	git: 'https://github.com/p-j/meteor-gravatar.git'
 });
 
@@ -12,6 +12,7 @@ Package.onUse(function(api) {
 
 	api.use('underscore@1.0.3', ['client', 'server']);
 	api.use('jparker:crypto-md5@0.1.1', ['client', 'server']);
+	api.use('idorecall:email-normalize@0.1.0', ['client', 'server']);
 
 	if (api.export) {
 		api.export('Gravatar');
@@ -23,6 +24,7 @@ Package.onTest(function(api) {
 	api.use([
 		'jparker:crypto-md5@0.1.1',
 		'jparker:gravatar@0.4.0',
+		'idorecall:email-normalize@0.1.0',
 		'tinytest'
 	], ['client', 'server']);
 

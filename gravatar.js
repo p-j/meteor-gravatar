@@ -58,6 +58,12 @@ Gravatar = {
 		if (self.isHash(emailOrHash)) {
 			url += emailOrHash;
 		} else {
+			if (_.isUndefined(options.d)) {
+				var normalizedEmail = Email.normalize(emailOrHash);
+				if (normalizedEmail !== emailOrHash) {
+					options.d = url + self.hash(normalizedEmail);
+				}
+			}
 			url += self.hash(emailOrHash);
 		}
 
