@@ -92,4 +92,4 @@ Credits
 -------
 
 * Based on [Tom Coleman's work](https://github.com/tmeasday/meteor-gravatar)
-* [iDoRecall](https://idorecall.com) for the [email normalization package]((https://github.com/iDoRecall/email-normalize))
+* [iDoRecall](https://idorecall.com) for the [email normalization package](https://github.com/iDoRecall/email-normalize)
