@@ -5,7 +5,7 @@
 Dependencies
 ----------
 - [`jparker:crypto-md5`](https://github.com/p-j/meteor-crypto-md5)
-- [`idorecall:email-normalize`]((https://github.com/iDoRecall/email-normalize))
+- [`idorecall:email-normalize`](https://github.com/iDoRecall/email-normalize)
 
 Install
 -------
