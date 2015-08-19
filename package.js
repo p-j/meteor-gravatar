@@ -8,8 +8,6 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-	api.versionsFrom('METEOR@0.9.1.1');
-
 	api.use('underscore@1.0.3', ['client', 'server']);
 	api.use('jparker:crypto-md5@0.1.1', ['client', 'server']);
 	api.use('idorecall:email-normalize@1.0.0', ['client', 'server']);
@@ -23,7 +21,7 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
 	api.use([
 		'jparker:crypto-md5@0.1.1',
-		'jparker:gravatar@0.4.0',
+		'jparker:gravatar@0.4.1',
 		'idorecall:email-normalize@1.0.0',
 		'tinytest'
 	], ['client', 'server']);
