@@ -1,9 +1,9 @@
 # TODO Using Meteor and spacejam to test is overkill, except for DNS resolution
-
+sudo: false
 language: node_js
 node_js:
   - "0.10"
-  
+
 before_script:
   # Install meteor
   - curl https://install.meteor.com | /bin/sh
@@ -15,4 +15,3 @@ before_script:
 
 script:
   - node_modules/.bin/spacejam --mongo-url mongodb:// test-packages ./
-  
