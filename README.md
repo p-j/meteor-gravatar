@@ -74,7 +74,7 @@ Some users prefer to include [address tags](https://en.wikipedia.org/wiki/Email_
 
 To address this problem, you can look at [`idorecall:email-normalize`](https://github.com/iDoRecall/email-normalize).
 
-> Previously this was included but as `email-normalize` seems to be unmaintained I decided to drop the dependency and leave full controll back to the developer. I believe a package like this one should do one thing well and one thing only.
+> Previously this was included but as `email-normalize` seems to be unmaintained I decided to drop the dependency and give full controll back to the developer. I believe a package like this one should do one thing well and one thing only.
 
 Credits
 -------
