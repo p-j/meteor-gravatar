@@ -1,6 +1,10 @@
 # Get Gravatar hashes / URLs for an email address
 
 [![Build Status](https://travis-ci.org/p-j/meteor-gravatar.svg)](https://travis-ci.org/p-j/meteor-gravatar)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/p-j/meteor-gravatar.svg)](http://isitmaintained.com/project/p-j/meteor-gravatar "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/p-j/meteor-gravatar.svg)](http://isitmaintained.com/project/p-j/meteor-gravatar "Percentage of issues still open")
+[![License](https://img.shields.io/badge/license-mit-blue.svg)](https://github.com/p-j/meteor-gravatar/blob/master/LICENSE)
 
 Dependencies
 ----------
@@ -38,11 +42,11 @@ Example
 
 ```javascript
 var email = 'email@example.com';
-var options = { 
-    secure: true // choose between `http://www.gravatar.com` 
+var options = {
+    secure: true // choose between `http://www.gravatar.com`
                  //            and `https://secure.gravatar.com`
                  //            default is `false`
-}; 
+};
 
 var md5Hash = Gravatar.hash(email);
 // 5658ffccee7f0ebfda2b226238b1eb6e
