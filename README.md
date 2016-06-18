@@ -1,4 +1,6 @@
-# Get Gravatar hashes / URLs for an email address
+# Meteor-Gravatar
+
+Easy Gravatar for your Meteor App
 
 [![Build Status](https://travis-ci.org/p-j/meteor-gravatar.svg)](https://travis-ci.org/p-j/meteor-gravatar)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
