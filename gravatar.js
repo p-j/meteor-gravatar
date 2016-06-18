@@ -1,5 +1,6 @@
-/* global Gravatar, CryptoJS, _ */
-Gravatar = {
+/* global CryptoJS, _ */
+
+Gravatar = { // eslint-disable-line no-undef
   /**
    * `cleantString` remove starting and trailing whitespaces
    * and lowercase the input
@@ -52,31 +53,20 @@ Gravatar = {
     var url = options.secure
     ? 'https://secure.gravatar.com/avatar/'
     : 'http://www.gravatar.com/avatar/'
+    delete options.secure
 
     // Is it an MD5 already ?
-    if (self.isHash(emailOrHash)) {
-      url += emailOrHash
-    } else {
-      if (_.isUndefined(options.d)) {
-        var normalizedEmail = Email.normalize(emailOrHash)
-        if (normalizedEmail !== emailOrHash) {
-          options.d = url + self.hash(normalizedEmail)
-        }
-      }
-      url += self.hash(emailOrHash)
-    }
-
-    delete options.secure
+    url += self.isHash(emailOrHash)
+    ? emailOrHash
+    : self.hash(emailOrHash)
 
     // Have any options to pass ?
     var params = _.map(options, function (val, key) {
       return key + '=' + encodeURIComponent(val)
     }).join('&')
 
-    if (params.length > 0) {
-      url += '?' + params
-    }
-
-    return url
+    return (params.length > 0)
+    ? url + '?' + params
+    : url
   }
 }
