@@ -9,7 +9,6 @@
 Dependencies
 ----------
 - [`jparker:crypto-md5`](https://github.com/p-j/meteor-crypto-md5)
-- [`idorecall:email-normalize`](https://github.com/iDoRecall/email-normalize)
 
 Install
 -------
@@ -73,27 +72,11 @@ var url = Gravatar.imageUrl('email@example.com', {
 
 Some users prefer to include [address tags](https://en.wikipedia.org/wiki/Email_address#Sub-addressing) in their email when they sign up for services - for example `joe+games@gmail.com`, or `joe+thisnewservice@fastmail.com`. Most of the time they won't bother setting a gravatar for the new email address, so you'd normally get a palceholder image or 404 from Gravatar.
 
-To address this problem, the package will by default consider that sub-addresses of various types (e.g. `joe+tag@gmail.com`, `j.o.e@googlemail.com`) refer to the canonical email address, thanks to using  [`idorecall:email-normalize`](https://github.com/iDoRecall/email-normalize). If don't provide a default image in the options for `imageUrl`, it will return a URL with an automatically filled `d` option that would be the Gravatar of the canonical address.
+To address this problem, you can look at [`idorecall:email-normalize`](https://github.com/iDoRecall/email-normalize).
 
-In code:
-
-```javascript
-var originalEmail = 'test+test@gmail.com';
-var normalizedEmail = Email.normalize(originalEmail);
-// test@gmail.com
-
-Gravatar.hash(originalEmail);
-// d093205fcb0a6ff09ad450636db8f05e
-
-Gravatar.hash(normalizedEmail);
-// 1aedb8d9dc4751e229a335e371db8058
-
-var url = Gravatar.imageUrl(originalEmail);
-// http://www.gravatar.com/avatar/d093205fcb0a6ff09ad450636db8f05e?d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2F1aedb8d9dc4751e229a335e371db8058
-```
+> Previously this was included but as `email-normalize` seems to be unmaintained I decided to drop the dependency and leave full controll back to the developer. I believe a package like this one should do one thing well and one thing only.
 
 Credits
 -------
 
 * Based on [Tom Coleman's work](https://github.com/tmeasday/meteor-gravatar)
-* [iDoRecall](https://idorecall.com) for the [email normalization package](https://github.com/iDoRecall/email-normalize)
