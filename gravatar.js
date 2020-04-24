@@ -42,17 +42,24 @@ Gravatar = { // eslint-disable-line no-undef
    * @param  {String} emailOrHash email or pregenerated MD5 hash to query
    * gravatar with.
    * @param  {Object} options     options to be passed to gravatar in the query
-   * string. The `secure` will be used to determine which base url to use.
+   * string. The `secure` will be used to determine which base url to use. 
+   * The `url` option can contain an alternative gravatar server
    * @return {String}             complete url to the avatar
    */
   imageUrl: function (emailOrHash, options) {
     var self = this
     options = options || {}
 
+	// Check if url option is available
+	var url = options.url
+	delete options.url
+
     // Want HTTPS ?
-    var url = options.secure
-    ? 'https://secure.gravatar.com/avatar/'
-    : 'http://www.gravatar.com/avatar/'
+	if (url == null) {
+		url = options.secure
+		? 'https://secure.gravatar.com/avatar/'
+		: 'http://www.gravatar.com/avatar/'
+	}
     delete options.secure
 
     // Is it an MD5 already ?

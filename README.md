@@ -47,6 +47,7 @@ var options = {
     secure: true // choose between `http://www.gravatar.com`
                  //            and `https://secure.gravatar.com`
                  //            default is `false`
+    url: http://gravatar.internal.corp/avatar/ // option for alternative gravatar server
 };
 
 var md5Hash = Gravatar.hash(email);
@@ -57,6 +58,9 @@ var url = Gravatar.imageUrl(email, options);
 
 var url2 = Gravatar.imageUrl(md5Hash, options);
 // https://secure.gravatar.com/avatar/5658ffccee7f0ebfda2b226238b1eb6e
+
+var url3 = Gravatar.imageUrl(md5Hash, options);
+// http://gravatar.internal.corp/avatar/5658ffccee7f0ebfda2b226238b1eb6e
 ```
 
 `options` may contain `key:value` pairs of parameters to be added to the URL. For a list of parameters available, see [Gravatar's documentation](http://en.gravatar.com/site/implement/images/)

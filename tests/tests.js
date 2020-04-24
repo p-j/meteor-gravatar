@@ -47,4 +47,13 @@ Tinytest.add('Gravatar - imageUrl', function (t) {
     }),
     'http://www.gravatar.com/avatar/77a6c4bd6a73a5780698778e7692461d?size=34&default=mm'
   )
+  
+  t.equal(
+    Gravatar.imageUrl('github@jeremie-parker.com', {
+      size: 34,
+      default: 'mm',
+      url: https://intravatar.internal.corp/avatar/
+    }),
+    'https://intravatar.internal.corp/avatar/77a6c4bd6a73a5780698778e7692461d?size=34&default=mm'
+  )
 })
